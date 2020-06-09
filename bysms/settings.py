@@ -23,13 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j(e!#ex48#x#4csz%^!!)iam)^@1%jv)fl@akpfwn3+iw@7rd2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 原来是 True
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
+# 应用
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 加入的新表
+    'common.apps.CommonConfig'
 ]
 
 MIDDLEWARE = [
@@ -73,6 +78,7 @@ WSGI_APPLICATION = 'bysms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# sqlite数据库
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
